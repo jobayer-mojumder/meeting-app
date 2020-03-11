@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.css';
 import Home from './components/Home';
+import Navigation from './components/Navigation';
 
 class App extends Component {
+
+  state = {
+    user: null,
+  }
+
   render() {
     return (
-      <Home />
+      <div>
+        <Navigation user={this.state.user} />
+        <Home user={this.state.user} />
+      </div>
     );
   }
 }
